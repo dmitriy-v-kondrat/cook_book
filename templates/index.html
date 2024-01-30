@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<br>
+<br>
+
+{# return from add_product() func #}
+{% if result %}
+    {{ result }}
+{% endif %}
+
+{# return from update_count_product() func #}
+{% if update_count %}
+    Обновлено {{ update_count }} ингредиента.
+{% endif %}
+
+{# return from show_recipes_without_product() func #}
+{% if recipes %}
+    В таблице отображены id и названия всех рецептов,<br>
+    в которых указанный продукт отсутствует,<br>
+    или присутствует в количестве меньше 10 грамм.<br>
+    <br>
+    <br>
+    {% for recipe in recipes %}
+        {{ recipe.id }} : {{ recipe.name }} <br>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>
