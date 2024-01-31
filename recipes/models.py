@@ -47,3 +47,6 @@ class WeightIngredient(models.Model):
                                    related_name='weights'
                                    )
     weight = models.PositiveIntegerField(verbose_name='weight gram')
+
+    class Meta:
+        unique_together = ('recipe', 'ingredient')
